@@ -168,44 +168,30 @@ if (!isset($_SESSION['username'])) {
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Berita</h1>
-                    <p class="mb-4">Tambah berita baru untuk ditampilkan di website. Untuk menambahkan berita baru, dapat menekan <b>TAMBAH<b> </p>
+                    <h1 class="h3 mb-2 text-gray-800">Tentang</h1>
+                    <p class="mb-4">Ubah keterangan tentang pada tampilan website dengan cara tekan <b>UBAH<b> </p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <a href="add.php" class="btn btn-success">+ Tambah</a>
-                        </div>
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Judul</th>
                                             <th>Isi</th>
-                                            <th>Pembuat</th>
-                                            <th>Tanggal Dibuat</th>
-                                            <th>Gambar</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $data = mysqli_query($koneksi, "SELECT * FROM berita");
+                                        $data = mysqli_query($koneksi, "SELECT * FROM tentang");
                                         while ($data2 = mysqli_fetch_array($data)) {
                                         ?>
                                             <tr>
-                                                <td><?php echo ucfirst($data2["judul"]) ?></td>
                                                 <td><?php echo ucfirst($data2["isi"]) ?></td>
-                                                <td><?php echo ucfirst($data2["author"]) ?></td>
-                                                <td><?php echo $data2["tanggal_buat"] ?></td>
                                                 <td>
-                                                    <img style="height: 250px; width: 250px" src="../src/images/<?php echo $data2["gambar"] ?>" alt="">
-                                                </td>
-                                                <td>
-                                                    <a href="edit.php?id=<?php echo $data2["id"] ?>" class="btn btn-primary">Ubah</a>
-                                                    <a href="delete.php?id=<?php echo $data2["id"] ?>" class="btn btn-danger">Hapus</a>
+                                                    <a href="edit_tentang.php?id=<?php echo $data2["id"] ?>" class="btn btn-primary">Ubah</a>
                                                 </td>
                                             </tr>
                                         <?php } ?>

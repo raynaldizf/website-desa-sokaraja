@@ -22,10 +22,10 @@
                     <a href="tentang.php" class="hover:text-green-500">Tentang</a>
                 </li>
                 <li>
-                    <a href="berita.php" class="hover:text-green-500">Berita Desa</a>
+                    <a href="berita.php" class="text-green-500 font-semibold hover:text-white">Berita Desa</a>
                 </li>
                 <li>
-                    <a href="kontak.php" class="text-green-500 font-semibold hover:text-white">Kontak</a>
+                    <a href="kontak.php" class="hover:text-green-500">Kontak</a>
                 </li>
             </ul>
         </div>
@@ -36,49 +36,24 @@
         <img class="w-screen h-[50vh] absolute top-0 -z-10 brightness-50" src="src/hero.png" alt="">
         <div class="h-[40vh] flex items-center justify-center ">
             <div class="text-center text-white space-y-8">
-                <h1 class="text-5xl font-bold">Kontak desa Sokaraja Tengah</h1>
+                <h1 class="text-5xl font-bold">Berita desa Sokaraja Tengah</h1>
             </div>
         </div>
     </div>
 
-    <div class="my-20 mx-44 flex justify-between items-center">
-        <div class="space-y-5">
-            <?php
-            include "koneksi.php";
-            $data = mysqli_query($koneksi, "SELECT * FROM telepon");
-            while ($data2 = mysqli_fetch_array($data)) {
-            ?>
 
-                <h1 class="text-5xl font-bold text-green-600">Hubungi kami</h1>
-                <div class="space-y-3">
-                    <h1 class="text-2xl">Nomor Telepon</h1>
-                    <?php echo $data2["telepon"] ?>
-                </div>
-            <?php } ?>
-            <?php
-            include "koneksi.php";
-            $data = mysqli_query($koneksi, "SELECT * FROM email");
-            while ($data2 = mysqli_fetch_array($data)) {
-            ?>
-                <div>
-                    <h1 class="text-2xl">Email</h1>
-                    <?php echo $data2["email"] ?>
-                </div>
-            <?php } ?>
-            <?php
-            include "koneksi.php";
-            $data = mysqli_query($koneksi, "SELECT * FROM alamat");
-            while ($data2 = mysqli_fetch_array($data)) {
-            ?>
-                <div>
-                    <h1 class="text-2xl">Alamat</h1>
-                    <?php echo $data2["alamat"] ?>
-                </div>
-            <?php } ?>
-        </div>
-        <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7912.1447380248!2d109.28099562662919!3d-7.457246340369885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655b8ac2d28b53%3A0xacc0a3e1fe4fc7cb!2sSokaraja%20Tengah%2C%20Kec.%20Sokaraja%2C%20Kabupaten%20Banyumas%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1657826419128!5m2!1sid!2sid" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+    <div class="bg-[#EEEEEE] mx-10 my-20 rounded-3xl ">
+        <?php
+        include "koneksi.php";
+        $data = mysqli_query($koneksi, "SELECT * FROM berita WHERE id='$_GET[id]'");
+        while ($data2 = mysqli_fetch_array($data)) {
+        ?>
+            <div class="border-4 rounded-3xl">
+                <p class="text-lg whitespace-pre-wrap text-xl py-5" style="font-family: montserrat; margin-left: 30px; margin-right: 30px; font-size: 25px;">
+                    <?php echo $data2["isi"] ?>
+                </p>
+            </div>
+        <?php } ?>
     </div>
 
     <!-- Footer -->
@@ -87,7 +62,7 @@
     $data = mysqli_query($koneksi, "SELECT * FROM alamat");
     while ($data2 = mysqli_fetch_array($data)) {
     ?>
-        <footer class="text-gray-600 body-font bg-slate-200	text-lg">
+        <footer class="text-gray-600 body-font bg-slate-200 text-lg">
             <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
                 <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                     <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">

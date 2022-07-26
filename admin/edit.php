@@ -50,7 +50,7 @@ if (!isset($_SESSION['username'])) {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.php">
+                <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -104,21 +104,23 @@ if (!isset($_SESSION['username'])) {
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Halaman</span>
                 </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item active" href="blank.html">Blank Page</a>
+                        <h6 class="collapse-header">Tentang</h6>
+                        <a class="collapse-item" href="tentang.php">Sejarah</a>
+                        <h6 class="collapse-header">Berita</h6>
+                        <a class="collapse-item" href="berita.php">Berita</a>
+                        <h6 class="collapse-header">Kontak</h6>
+                        <a class="collapse-item" href="telepon.php">Nomor Telepon</a>
+                        <a class="collapse-item" href="email.php">Email</a>
+                        <a class="collapse-item" href="alamat.php">Alamat</a>
+                        <h6 class="collapse-header">Lainnya</h6>
+                        <a class="collapse-item" href="footer.php">Footer</a>
                     </div>
                 </div>
             </li>
@@ -163,16 +165,7 @@ if (!isset($_SESSION['username'])) {
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <h1 style="color:#457b9d; font-family: inter;"><strong>DESA SOKARAJA TENGAH</strong></h1>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
